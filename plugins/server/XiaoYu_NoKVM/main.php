@@ -76,7 +76,7 @@ function XiaoYu_NoKVM_RenewService($params){
     if($return['ret'] == "ok"){
         return array(
             'status' => 'success',
-            'enddate' => date('Y-m-d', strtotime("+{$params['data']['time']['day']} days", $params['service']['enddate'])),
+            'enddate' => date('Y-m-d', strtotime("+{$params['data']['time']['day']} days", strtotime($params['service']['enddate']))),
         );
     }else{
         return array(
